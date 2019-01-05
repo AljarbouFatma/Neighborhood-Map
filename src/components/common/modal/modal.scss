@@ -1,0 +1,136 @@
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 20; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  border-radius:$global-radius*2;
+    background-color: #fefefe;
+    // z-index:999999999999;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    min-height:30vh;
+    position:relative;
+    &.fixed {
+      position:fixed;
+    }
+    @include breakpoint(xxlarge only) {
+      width:75%;
+      &.fixed {
+        margin-left:12%;
+      }
+      &.med {
+        width:40%;
+        &.fixed {
+          margin-left:30%;
+        }
+      }
+      &.sml {
+        width:20%;
+        &.fixed {
+          margin-left:40%;
+        }
+      }
+    }
+
+    @include breakpoint(xlarge only) {
+      width: 75%;
+      &.fixed {
+        margin-left:12%;
+      }
+      &.med {
+        width:50%;
+        &.fixed {
+          margin-left:25%;
+        }
+      }
+      &.sml {
+        width:34%;
+        &.fixed {
+          margin-left:33%;
+        }
+      }
+    }
+    @include breakpoint(large only){
+      width:75%;
+      &.fixed {
+        margin-left:12%;
+      }
+      &.med {
+        width:60%;
+        &.fixed {
+          margin-left:20%;
+        }
+      }
+      &.sml {
+        width:40%;
+        &.fixed {
+          margin-left:30%;
+        }
+      }
+    }
+    @include breakpoint(medium only){
+      width:85%;
+      &.fixed {
+        margin-left:7%;
+      }
+      &.med {
+        width:75%;
+        &.fixed {
+          margin-left:12%;
+        }
+      }
+      &.sml {
+        width:57%;
+        &.fixed {
+          margin-left:21%;
+        }
+      }
+    }
+    @include breakpoint(small only){
+      width:95%;
+      &.fixed {
+        margin-left:2%;
+      }
+      &.med {
+        width:93%;
+        &.fixed {
+          margin-left:3%;
+        }
+      }
+      &.sml {
+        width:90%;
+        &.fixed {
+          margin-left:5%;
+        }
+      }
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position:absolute;
+    top:0px;
+    right:14px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

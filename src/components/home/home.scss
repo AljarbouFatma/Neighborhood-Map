@@ -1,0 +1,166 @@
+#map-container {
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+#sidePane {
+  position: absolute;
+  height: 100vh;
+  background: white;
+  z-index: 100;
+  padding-top: 15px;
+  padding-right: 5px;
+  background-color: white;
+  font-weight: 600;
+}
+ul {
+  list-style-type: none;
+}
+#placesInfo {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  @include breakpoint(small only) {
+  font-size: 15px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+}
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(253, 116, 0, 1);
+}
+hr {
+  border-color: #fd7400;
+  margin: .5rem;
+}
+#sidePane {
+  @include breakpoint(medium up) {
+    padding: 25px
+  }
+}
+
+.pulseDrag {
+	animation: zoomIn 3s ease-in-out !important;
+}
+
+
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  margin: 0;
+
+  /* non-critical appearance styles */
+  list-style: none;
+  background: white;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+}
+
+.nav-item p {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item p:hover {
+  color: #c74438;
+  transition-duration: .5s;
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+
+  /* non-critical apperance styles */
+  background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);
+  background-size: 200%;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' fill='#fd7400' height='6'/><rect y='24' width='30' fill='#fd7400' height='6'/><rect y='12' fill='#fd7400' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 32vw;
+  @include breakpoint(medium down) {
+    left: 52vw;
+  }
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 31vw;
+  @include breakpoint(medium down) {
+    left: 50vw;
+  }
+}
+
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }

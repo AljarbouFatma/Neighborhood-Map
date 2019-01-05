@@ -1,0 +1,26 @@
+@import "../styling/settings";
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything(true);
+@include foundation-grid;
+@include foundation-xy-grid-classes(
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true
+);
+
+@import '../styling/quill';
+@import '../styling/flatpickr';
+
+@import '../styling/global-variables';
+@import './header/header';
+@import './common/common';
+@import './home/home';
+@import '../styling/animate.scss';
+
+body {
+  background-color:rgba(0,0,0,0.05);
+}
